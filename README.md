@@ -1,5 +1,7 @@
 # Through-metal Communication Prototype
 
+![alt text](https://github.com/CCCS-Team/Through-metal-Communication-Prototype/blob/main/documents/Transmit%20and%20Receive%20circuit.png)
+
 ## Transmitter (Javionn Ramsey and Chevel Samuels)
 
 - Objective: Create an RLC through-metal transmitter circuit with a voltage switch amplifier and a resonant frequency of 500 Hz.
