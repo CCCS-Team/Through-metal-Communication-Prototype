@@ -1,6 +1,54 @@
 # Through-metal Communication Prototype
 
-## Transmitter
+## Transmitter (Javionn Ramsey and Chevel Samuels)
+
+- Objective: Create an RLC through-metal transmitter circuit with a voltage switch amplifier and a resonant frequency of 500 Hz.
+- List of Documents:
+
+  - Sequence of 11111 at 500 Hz code
+
+  - Sequence of 11111 at 250 Hz code
+
+  - Sequence of 11111 at 1000 Hz code
+
+  - Sequence of 101010 at 250 Hz code
+
+  - Sequence of 101010 at 500 Hz code
+
+  - Sequence of 101010 at 1000 Hz code
+
+  - Voltage Switch Amplifier data sheet
+
+  - Voltage Switch Amplifier Quick Start Guide
+
+  - Inverter chip Data Sheet
+
+  - Random 1 and 0 bit code
+
+- System Overview ![alt text](https://github.com/CCCS-Team/Through-metal-Communication-Prototype/blob/main/imag/sys11.png)
+- Materials and equipment:
+
+  - Computer/laptop
+  - Arduino Mega 2560
+  - Breadboard
+  - Wires (male – male)
+  - Wires (male – female)
+  - SN7404N Inverter Chip
+  - LEDs (optional)
+  - Voltage Switch Amplifier
+  - Alligator Clip Wires
+  - Alligator to Banana Wires
+  - Oscilloscope
+  - 2 Power supplies
+  - two 3.3 μF Capacitors
+  - 2.2k Ω Resistor
+  - Inductor Wire Coil
+
+
+
+- Set Up Procedure: First, upload the code for either a sequence of 101010 or 11111. The frequency used will depend on the delay time in the code. In the code, pin 11 is used as the output on the Arduino microcontroller. The next step is to invert the signal. On the breadboard, connect pin 11 to channel 1 on an oscilloscope. Then connect pin 11 to an inverter chip and channel 2 on the oscilloscope to the output of the inverter. Make sure that 5V and Ground are properly connected to the inverter and circuit. Verify that the signals are inverted and perfectly synchronized. Next, connect the voltage switch amplifier to the Arduino through the breadboard connections.  On the Amplifier, INA connects to pin 11, INB connects to inverter output of pin 11, VCCI is connected to 5V, Ground is connected to Ground, and Disable is connected to Ground.  The connection of the LEDs are completely optional, they are only used as visual indicators that circuit is properly connected. The first LED is connected to pin 11 and the second is connected to inverter output. After the Arduino is properly connected, start connecting the power supplies. It is recommended that you have 2 separate power supplies. On the Amplifier, connect the VCCB to power supply 1. Then connect the Ground of the amplifier (Ground B) to power supply 2. If you are viewing the result on an oscilloscope, connect the ground of the oscilloscope directly to Ground B as well. Next, connect the input drain source to the same power supply (power supply 2)  as Ground B. After this create another circuit with a 2.2k Ω Resistor and two 3.3 μF Capacitors in parallel all to each other. Then connect the Output drain source and Output Ground A to the same input of the resistor and capacitors. The two outputs must be connected to the same input or else you will not receive the correct result. Connect oscilloscope input to the last capacitor. You should see an amplified square wave. The frequency of the signal is dependent on the delay time used in the code. The peak to peak voltage is dependent on the input voltage. The greater the input voltage, the greater the Vpp. Next, connect the wire coil in series to the capacitor. The wire coil will act as an inductor and turn the square wave into an amplified sine wave. The circuit is now complete and the signal is being transmitted by the inductor wire coil. 
+![image](https://user-images.githubusercontent.com/109627536/179872736-6657a340-f1ff-4827-ad2b-c07c5ae490c2.png)
+
 
 ## Receiver (Jarvis Turner and Marcus Allen)
 
